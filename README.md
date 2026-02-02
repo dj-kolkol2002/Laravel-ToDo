@@ -1,44 +1,44 @@
 # Laravel ToDo
 
-Aplikacja do zarządzania zadaniami (ToDo) zbudowana w Laravel 12.
+A task management (ToDo) application built with Laravel 12.
 
-## Funkcjonalności
+## Features
 
-- Tworzenie, edycja i usuwanie zadań
-- Oznaczanie zadań jako ukończone / nieukończone
-- Paginacja listy zadań
-- Walidacja formularzy (tytuł, opis, szczegółowy opis)
+- Create, edit and delete tasks
+- Mark tasks as completed / incomplete
+- Paginated task list
+- Form validation (title, description, long description)
 
-## Wymagania
+## Requirements
 
 - PHP >= 8.2
 - Composer
-- MySQL / MariaDB (lub Docker)
+- MySQL / MariaDB (or Docker)
 
-## Instalacja
+## Installation
 
 ```bash
-# Klonowanie repozytorium
+# Clone the repository
 git clone https://github.com/dj-kolkol2002/Laravel-ToDo.git
 cd Laravel-ToDo
 
-# Instalacja zależności
+# Install dependencies
 composer install
 
-# Konfiguracja środowiska
+# Configure environment
 cp .env.example .env
 php artisan key:generate
 ```
 
-## Baza danych
+## Database
 
-Projekt zawiera `docker-compose.yml` z MariaDB i Adminer.
+The project includes a `docker-compose.yml` with MariaDB and Adminer.
 
 ```bash
-# Uruchomienie bazy przez Docker
+# Start the database via Docker
 docker compose up -d mysql
 
-# Konfiguracja .env
+# Configure .env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -46,35 +46,35 @@ DB_DATABASE=laravel-task-list
 DB_USERNAME=root
 DB_PASSWORD=root
 
-# Uruchomienie migracji
+# Run migrations
 php artisan migrate
 ```
 
-## Uruchomienie
+## Running the application
 
 ```bash
 php artisan serve
 ```
 
-Aplikacja będzie dostępna pod adresem `http://localhost:8000`.
+The application will be available at `http://localhost:8000`.
 
-## Struktura bazy danych
+## Database structure
 
-### Tabela `tasks`
+### `tasks` table
 
-| Kolumna            | Typ     | Opis                        |
-|--------------------|---------|-----------------------------|
-| id                 | bigint  | Klucz główny                |
-| title              | string  | Tytuł zadania               |
-| description        | text    | Krótki opis                 |
-| long_description   | text    | Szczegółowy opis (opcjonalny)|
-| completed          | boolean | Status ukończenia           |
-| created_at         | timestamp | Data utworzenia            |
-| updated_at         | timestamp | Data aktualizacji         |
+| Column             | Type      | Description              |
+|--------------------|-----------|--------------------------|
+| id                 | bigint    | Primary key              |
+| title              | string    | Task title               |
+| description        | text      | Short description        |
+| long_description   | text      | Detailed description (optional) |
+| completed          | boolean   | Completion status        |
+| created_at         | timestamp | Creation date            |
+| updated_at         | timestamp | Last update date         |
 
-## Technologie
+## Tech stack
 
 - Laravel 12
 - PHP 8.2+
 - MySQL / MariaDB
-- Blade (szablony)
+- Blade templates
